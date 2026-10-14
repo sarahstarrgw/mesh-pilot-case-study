@@ -1,0 +1,120 @@
+test_id,category,student_context,student_context_description,query,ground_truth_answer,must_contain,must_not_contain,factual_assertions,pass_criteria,ai_response,response_time_ms,timestamp,session_id
+QA-01,policy,any_student,Any ME freshman,How do I drop a course after the semester starts?,You can drop up to the drop deadline (next Friday at 12pm). Reach out to your advisor for guidance.,drop deadline;advisor,,Drop deadline is next Friday at 12pm; advisor is the point of contact for dropping,Response states correct deadline AND directs to advisor,"To provide you with accurate information about dropping a course after the semester starts at George Washington University, I'd like to share the following response. Is this okay?
+
+To drop a course after the semester has started:
+
+1. Log in to your GWeb account
+2. Navigate to the Registration Menu
+3. Select ""Registration (Add/Drop)""
+4. Choose the appropriate term
+5. Select the course you wish to drop
+6. Click ""Web Drop Course""
+
+Please note that there may be deadlines and potential academic or financial implications for dropping a course. It's advisable to consult with your academic advisor, James Young, before making this decision. You can reach out to them through your student portal email or calendar functions.
+
+For more detailed information on drop policies and deadlines, please check the Registrar's website or your department's course bulletin in your resources tab.",8624,2026-03-02T23:47:25.871161,017a37c87cb241e6a7a5
+QA-02,system,any_student,Any ME freshman,How do I check my degree progress?,You can view your degree progress through DegreeMap.,DegreeMap|Degree Map|degree audit,,DegreeMap is the tool for checking degree progress,Response names DegreeMap as the tool,"Based on your academic profile, I can provide you with an overview of your degree progress. Would you like me to summarize your current progress towards your Bachelor of Science in Mechanical Engineering?",4184,2026-03-02T23:47:32.056991,b93bb52dbf63454aa347
+QA-03,system,any_student,Any ME freshman,How do I contact my advisor?,Through the Mail tab or by scheduling time on their calendar.,Mail;calendar,,Mail tab and Calendar are the two contact methods,Response names both contact methods,"To contact your advisor, James Young, you can use the email and calendar functions available in your student portal. These tools will allow you to send an email or schedule an appointment with your advisor. Would you like more information on how to access these functions in the portal?",4954,2026-03-02T23:47:39.015590,8854f7203d764551a11e
+QA-04,system,any_student,Any ME freshman,How do I see my program requirements?,On Degree Map and the curriculum planner guides.,Degree Map|DegreeMap|degree audit;curriculum,,Degree Map and curriculum guides are both sources,Response names both sources,"To help you view your program requirements, I'd like to confirm: Are you looking for a way to access your program requirements through the GW student portal, or would you like me to provide a summary based on the information I have?",4981,2026-03-02T23:47:45.998797,9d597be30cdb4134aaac
+QA-05,profile,any_student,Any ME freshman,Do I have outstanding tasks on my academic profile?,You have a registration hold. Submit your course registration form to your advisor for approval.,registration hold;registration form,,All sandbox students have a registration hold,Response identifies the registration hold,"Based on your academic profile, there are no immediate outstanding tasks that require urgent attention. As a freshman just starting in Fall 2025, you're currently enrolled in several core courses for your Mechanical Engineering degree. However, here are some points to keep in mind:
+
+1. You're making good progress with 3 credits completed out of the required 128.
+2. You're currently taking important foundational courses like CHEM 1113, MAE 1001, and MATH 1232.
+3. Your GPA is currently 0, which is normal as you're just beginning your studies.
+4. You're in good academic standing.
+
+To stay on track, continue to focus on your current courses and prepare to register for next semester's classes when the time comes. If you have any specific concerns about course selection or degree progress, I recommend scheduling a meeting with your advisor, James Young, through the portal.",7625,2026-03-02T23:47:55.629117,52f2876a731a43ac80b5
+QA-06,course_rec,student_a,ME freshman; taking MATH 1232 + ECON 1011; ahead one math course,What courses should I take next semester?,"MAE 1004, MAE 1117, MATH 2233, MATH 2184, PHYS 1021, non-technical elective",MAE 1004;MAE 1117;MATH 2233;MATH 2184;PHYS 1021,,"Student A should take 6 courses: MAE 1004, MAE 1117, MATH 2233, MATH 2184, PHYS 1021, and an elective",Response includes all 5 required courses,Are there any specific requirements or restrictions for course selection in your second semester (Spring 2026) that I should be aware of?,7220,2026-03-02T23:48:04.853693,d189bd44c1504a56b34a
+QA-07,course_rec,student_b,ME freshman; taking MATH 1232 + PSYC 1001,What courses should I take next semester?,"MAE 1004, MAE 1117, MATH 2233, MATH 2184, PHYS 1021, non-technical elective",MAE 1004;MAE 1117;PHYS 1021,,"Baseline from profile: Student B should take MAE 1004, MAE 1117, PHYS 1021, math courses, and an elective",Response includes core required courses from profile data,"Do you have any specific preferences or constraints for your next semester schedule, such as a desired number of credits or any particular courses you're interested in taking?",6444,2026-03-02T23:48:13.302812,ac9457294f204e978639
+QA-08,course_rec,student_c,ME freshman; taking MATH 1232 + PSC 1001; completed MATH 1231; international student,What courses should I take next semester?,"MAE 1004, MAE 1117, MATH 2233, MATH 2184, PHYS 1021, non-technical elective",MAE 1004;MAE 1117;PHYS 1021,MATH 1231,Student C has completed MATH 1231; should not be recommended again,Response includes required courses AND does not recommend MATH 1231 (already completed),How are you performing in your current courses? Are there any subjects you're finding particularly challenging or enjoyable?,7062,2026-03-02T23:48:22.368602,8120a64fb5224c12882a
+QA-09,system,any_student,Any ME freshman,My DegreeMap doesn't look right. How do I see if there's an issue?,Reach out to your advisor over email or with an appointment.,advisor,,Advisor is the escalation path for DegreeMap discrepancies,Response directs to advisor,"To check your DegreeMap for issues, you can follow these steps:
+
+1. Log in to your GW student portal
+2. Access your DegreeMap
+3. Review each section carefully, comparing it to your expected degree requirements
+4. Look for any missing courses or unexpected requirements
+
+If you notice any discrepancies or have concerns, it's best to contact your academic advisor, James Young, for a thorough review. Would you like information on how to reach out to your advisor?",6052,2026-03-02T23:48:30.424367,5b40a05d619c4dd18d66
+QA-10,process,any_student,Any ME freshman,How do you approach course registration and planning?,Review curriculum and program requirements via DegreeMap and curriculum sheets. Take courses in curriculum order.,DegreeMap;curriculum,,DegreeMap and curriculum sheets are the planning tools,Response names both tools,"Here's some advice on approaching course registration and planning:
+
+1. Review your degree requirements and current progress.
+2. Consult the course bulletin for your major (Mechanical Engineering).
+3. Plan your courses for the upcoming semester and future semesters.
+4. Meet with your advisor, James Young, to discuss your plan.
+5. Register for courses during your assigned registration time.
+6. Balance your course load considering difficulty and workload.
+7. Consider prerequisites and course sequencing.
+8. Don't forget about non-technical electives and other requirements.
+
+Would you like more details on any of these steps?",6390,2026-03-02T23:48:38.820867,df4be9a661fc445b800c
+CTX-02,course_rec,student_c,ME freshman; considering dropping Calc 2; has completed Calc 1,I'm thinking about dropping Calc 2 this semester. How does that affect my Spring courses?,"Must retake MATH 1232 in Spring. MATH 2233 and MATH 2184 delayed (require Calc 2). Can still take MAE 1004, MAE 1117, PHYS 1021.",MATH 1232;PHYS 1021,,If Calc 2 dropped: must retake in Spring; PHYS 1021 prereq is Calc 1 (not Calc 2) so it is still available; MATH 2233 and MATH 2184 are delayed,Response correctly identifies PHYS 1021 as still available (prereq is Calc 1 not Calc 2) AND identifies MATH 2233/2184 as delayed,Can you tell me why you're considering dropping Calculus II (MATH 1232) this semester? Are you facing any specific challenges with the course?,4558,2026-03-02T23:48:45.382957,438b0d5b9dfc495abc7b
+CTX-03,prerequisite,any_student,Any ME freshman,What are the prerequisites for University Physics 1 (PHYS 1021)?,MATH 1231 (Single-Variable Calculus I),MATH 1231;Calculus I,MATH 1232 as prerequisite;Calculus II as prerequisite;Calc 2 as prerequisite,Prereq for PHYS 1021 is MATH 1231 (Calc 1); it is NOT MATH 1232 (Calc 2),Response states Calc 1 as the prereq AND does not state Calc 2 as the prereq,"What are the prerequisites for University Physics 1 (PHYS 1021)? This information is not available in the student's profile, so I need to ask for it specifically.",4423,2026-03-02T23:48:51.808110,f620d58bedc04c5abda9
+CTX-04,prerequisite,any_student,Any ME freshman,What are the prerequisites for Multivariate Calculus (MATH 2233)?,MATH 1232 (Single-Variable Calculus II),MATH 1232;Calculus II,,Prereq for MATH 2233 is MATH 1232 (Calc 2),Response states Calc 2 as the prereq,What are the prerequisites for MATH 2233 Multivariable Calculus?,3128,2026-03-02T23:48:56.941779,b5c34218d71e4ff9bab9
+CTX-05,prerequisite,any_student,Any ME freshman,What are the prerequisites for Linear Algebra I (MATH 2184)?,MATH 1232 (Single-Variable Calculus II),MATH 1232;Calculus II,,Prereq for MATH 2184 is MATH 1232 (Calc 2),Response states Calc 2 as the prereq,"I apologize, but I don't have specific information about the prerequisites for MATH 2184 (Linear Algebra I) in my current context. To provide you with accurate information, I would need to check the official course catalog or consult with an academic advisor. Would you like me to direct you to where you can find this information?",5489,2026-03-02T23:49:04.433530,e655ec46ff874f36adf3
+CTX-06,prerequisite,any_student,Any ME freshman,Can I take Linear Algebra and Multivariate Calculus at the same time?,Yes — both require MATH 1232 (Calc 2) as a prerequisite and can be taken concurrently.,MATH 1232,cannot take both,MATH 2184 and MATH 2233 can be taken concurrently; both require Calc 2,Response confirms concurrent enrollment is possible,"To provide an accurate answer, I need some additional information. Are there any specific prerequisites for Linear Algebra (MATH 2184) and Multivariable Calculus (MATH 2233) in your program? Also, have you completed Single-Variable Calculus II (MATH 1232)?",5584,2026-03-02T23:49:12.023333,a6af9c8eaabb4d65ab52
+CTX-08,policy,student_c,ME freshman; international student,What's the minimum number of credits I need as an international student?,12 credit hours per semester for full-time F-1 visa status.,12;full-time,,F-1 students require minimum 12 credits for full-time status,Response states 12 credits as the minimum,Are you an international student? Please confirm.,3589,2026-03-02T23:49:17.616928,ff5793e08cb64cb880a8
+CTX-09,course_rec,student_a,ME freshman; asking about credit load,How many credits does the MAE curriculum recommend per semester?,The MAE curriculum flow shows semesters ranging from 15-19 credits depending on the semester.,curriculum,maximum of 18;limit of 18,MAE curriculum flow includes semesters with 19 credits,Response references program-specific credit loads (not just generic 12-18 university range),Is the Mechanical Engineering program typically completed in 4 years (8 semesters)?,4798,2026-03-02T23:49:24.417527,9379557c828340219785
+CTX-10,profile,student_c,ME freshman; has completed MATH 1231 per academic profile,What math courses do I still need to take?,"Completed: MATH 1231. Remaining: MATH 1232 (in progress), MATH 2233, MATH 2184, APSC 2113.",MATH 1232;MATH 2233;MATH 2184,MATH 1231 as remaining;take MATH 1231,Student C has completed MATH 1231 per profile,Response does not list MATH 1231 as a course still needed,"Based on your academic profile, you still need to take the following math courses:
+
+1. MATH 1231 Single-Variable Calculus I (3cr)
+2. MATH 2184 Linear Algebra I (3cr)
+3. MATH 2233 Multivariable Calculus (3cr)
+
+These courses are part of your degree requirements and are currently listed as ""not yet taken."" It's important to note that you are currently in-progress with MATH 1232 Single-Variable Calculus II, which is a good start to your math sequence.
+
+Remember to consult with your advisor, James Young, for the best order to take these courses and to ensure you're meeting all prerequisites.",6090,2026-03-02T23:49:32.510356,0f029db6d7374e5f9f2f
+CTX-13,degree_info,any_student,Any ME freshman,How many total credits do I need to graduate with a BS in Mechanical Engineering?,128 total credits for the BSME degree.,128,,BSME requires 128 total credits,Response states 128 credits,"Based on your academic profile, you need a total of 128 credits to graduate with a BS in Mechanical Engineering from George Washington University. This includes:
+
+- 98 credits for your core Degree Requirements
+- 18 credits for Non-Technical Electives
+- 12 credits for Technical Electives
+
+Your profile shows that you are currently at 3 credits out of the required 128, which means you have 125 credits remaining to complete your degree.",4547,2026-03-02T23:49:39.060049,c73c4facb43449448740
+CTX-14,degree_info,any_student,Any ME freshman,How many non-technical elective credits do I need for my ME degree?,18 credits of non-technical electives (6 courses).,18,,ME degree requires 18 credits of non-technical electives,Response states 18 credits of non-technical electives,"Based on your academic profile, you need 18 credits of Non-Technical Electives for your Mechanical Engineering degree. This requirement is broken down into six 3-credit courses:
+
+1. ECON 1011 Principles of Economics I (3cr) - which you are currently taking in Fall 2025
+2-6. Five additional Non-Technical Elective courses (3cr each)
+
+You are currently in progress with one of these courses (ECON 1011), so you will need to complete five more Non-Technical Elective courses (15 credits) to fulfill this requirement.",4965,2026-03-02T23:49:46.028102,18b8b511046748c49eab
+CTX-15,degree_info,any_student,Any ME freshman,How many technical elective credits do I need?,12 credits of technical electives (4 courses).,12,,ME degree requires 12 credits of technical electives,Response states 12 credits of technical electives,"Based on your academic profile, you need 12 credits of Technical Electives for your Bachelor of Science in Mechanical Engineering degree. This requirement is broken down into four 3-credit courses:
+
+- Technical Elective (3cr)
+- Technical Elective (3cr)
+- Technical Elective (3cr)
+- Technical Elective (3cr)
+
+Currently, you haven't taken any of these technical electives yet, so you still need to complete all 12 credits.",4190,2026-03-02T23:49:52.222496,d833bb29782b43b8bc6b
+CTX-16,profile,any_student,Any ME freshman,Who is my academic advisor?,Your advisor is James Young.,James Young,,All sandbox students are assigned advisor James Young,Response names James Young,"Your academic advisor is James Young. If you need to contact your advisor, you can use the email and calendar functions in your student portal to schedule an appointment or send a message.",3456,2026-03-02T23:49:57.680344,6443044d483a4e0c8dfd
+CTX-17,prerequisite,any_student,Any ME freshman,How many credits is University Physics I (PHYS 1021)?,PHYS 1021 is 4 credits.,4,,PHYS 1021 is a 4-credit course,Response states 4 credits,"University Physics I (PHYS 1021) is a 4-credit course. This information can be found in your degree requirements list, where it's listed as ""PHYS 1021 University Physics I (4cr)"".",3533,2026-03-02T23:50:03.215417,42cefb5b7e9e43b4ad89
+CTX-18,prerequisite,any_student,Any ME freshman,What are the prerequisites for Analytical Mechanics I (APSC 2057)?,PHYS 1021 (University Physics I) and MATH 1232 (Single-Variable Calculus II).,PHYS 1021;MATH 1232,,APSC 2057 requires both PHYS 1021 and MATH 1232,Response states both prerequisites,"I apologize, but I don't have the specific prerequisite information for APSC 2057 (Analytical Mechanics I) in my current data. To provide you with accurate information, I would need to check the official course bulletin. Would you like me to direct you to where you can find this information?",5850,2026-03-02T23:50:11.071411,0b64c99ee4b94a44bfc7
+CTX-19,profile,student_a,ME freshman; currently enrolled in MATH 1232 and ECON 1011,What courses am I currently enrolled in?,You are currently enrolled in MATH 1232 (Single-Variable Calculus II) and ECON 1011 (Principles of Economics I).,MATH 1232;ECON 1011,,Student A is currently taking MATH 1232 and ECON 1011,Response identifies both current courses,"Based on your academic profile, you are currently enrolled in the following courses for Fall 2025:
+
+1. CHEM 1113 General Chemistry for Engineers (4 credits)
+2. MAE 1001 Introduction to Mechanical and Aerospace Engineering (1 credit)
+3. SEAS 1001 Engineering Orientation (1 credit)
+4. MATH 1232 Single-Variable Calculus II (3 credits)
+5. ECON 1011 Principles of Economics I (3 credits)
+
+Additionally, you have UW 1020 University Writing (4 credits) listed as in-progress, but it's marked as a transfer course, so it may not be part of your current semester enrollment at GWU.",6050,2026-03-02T23:50:19.124497,948918baa1794ab59a91
+CTX-20,profile,student_b,ME freshman; currently enrolled in MATH 1232 and PSYC 1001,What courses am I currently taking this semester?,You are currently enrolled in MATH 1232 (Single-Variable Calculus II) and PSYC 1001 (General Psychology).,MATH 1232;PSYC 1001,,Student B is currently taking MATH 1232 and PSYC 1001,Response identifies both current courses,"Based on your academic profile, you are currently taking the following courses this semester (Fall 2025):
+
+1. CHEM 1113 General Chemistry for Engineers (4 credits)
+2. MAE 1001 Introduction to Mechanical and Aerospace Engineering (1 credit)
+3. SEAS 1001 Engineering Orientation (1 credit)
+4. UW 1020 University Writing (4 credits)
+5. MATH 1232 Single-Variable Calculus II (3 credits)
+6. PSYC 1001 General Psychology (3 credits)
+
+You are enrolled in a total of 6 courses, totaling 16 credits for this semester.",6205,2026-03-02T23:50:27.332403,9aec9662740045b2b1af
+CTX-21,prerequisite,student_c,ME freshman; has completed MATH 1231; currently taking MATH 1232,Am I eligible to take PHYS 1021 next semester?,Yes — PHYS 1021 requires MATH 1231 (Calc 1) which you have completed.,MATH 1231,not eligible;cannot take,PHYS 1021 prereq is MATH 1231; Student C has completed MATH 1231; therefore eligible,Response confirms eligibility and cites Calc 1 as the prereq,"To answer your question about eligibility for PHYS 1021, I need to know the prerequisites for this course. Could you please provide information about the prerequisites for PHYS 1021 (University Physics I)?",5273,2026-03-02T23:50:34.609864,d68b98702e9940dc9428
+CTX-22,prerequisite,student_a,ME freshman; currently taking MATH 1232,Am I eligible to take Multivariate Calculus (MATH 2233) next semester?,"Yes, if you complete MATH 1232 this semester. MATH 2233 requires MATH 1232 as a prerequisite.",MATH 1232,not eligible;cannot take,MATH 2233 requires MATH 1232; Student A is currently taking MATH 1232; eligible if passed,Response confirms conditional eligibility based on completing Calc 2,"To answer your question about eligibility for MATH 2233 Multivariable Calculus, I need to know the prerequisites for this course. Can you please provide information about the prerequisites for MATH 2233?",5008,2026-03-02T23:50:41.622130,bd90edd302a049ae9aeb
+FALLBACK-01,out_of_scope,any_student,Any ME freshman,What's the best pizza place near campus?,Redirect — outside advising scope.,advisor|don't have|cannot|can't;outside|academic,,Non-academic questions should be redirected,Response does not attempt to answer and redirects to appropriate resources,"While I don't have information about local restaurants, I'd be happy to assist you with academic-related questions. Is there anything about your Mechanical Engineering program or course schedule you'd like to discuss?",5627,2026-03-02T23:50:49.251899,3ecf6a120c634efc92ca
+FALLBACK-02,out_of_scope,any_student,Any ME freshman,Can you write me an essay for my English class?,Redirect — outside advising scope.,,,Non-academic-advising requests should be declined/redirected,Response declines and redirects to appropriate resources,"I apologize, but I cannot write an essay for you. As an academic advising assistant, my role is to provide guidance on your academic journey, not to complete assignments on your behalf. Writing your own essays is crucial for your learning and academic integrity.
+
+If you're struggling with your English class, I'd recommend:
+
+1. Utilizing the University Writing Center for help with essay writing and editing.
+2. Speaking with your English professor during office hours for clarification on assignments.
+3. Forming study groups with classmates to discuss and brainstorm ideas.
+
+Remember, your academic success depends on your own efforts and learning. If you're having persistent difficulties, please consider discussing this with your advisor, James Young, to explore additional support options.",6595,2026-03-02T23:50:57.851827,c6e2c536b5804f9e894e

@@ -1,0 +1,205 @@
+test_id,category,query,student_context,is_deferral,judge_overall,pass_criteria_result,pass_criteria_reason,assertions_detail,judge_raw,response_time_ms
+QA-01,policy,How do I drop a course after the semester starts?,any_student,FALSE,FAIL,FAIL,"The response does not state the correct deadline, though it does direct to the advisor.",Drop deadline is next Friday at 12pm: NOT_ADDRESSED; advisor is the point of contact for drop: PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""Drop deadline is next Friday at 12pm"",
+      ""result"": ""NOT_ADDRESSED"",
+      ""reason"": ""The AI response does not mention the specific drop deadline of next Friday at 12pm.""
+    },
+    {
+      ""assertion"": ""advisor is the point of contact for dropping"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response advises consulting with the academic advisor before dropping a course.""
+    }
+  ],
+  ""pass_criteria_result"": ""FAIL"",
+  ""pass_criteria_reason"": ""The response does not state the correct deadline, though it does direct to the advisor."",
+  ""overall"": ""FAIL""
+}",5450
+QA-02,system,How do I check my degree progress?,any_student,FALSE,FAIL,FAIL,"The response does not name DegreeMap, degree audit, or degree map as the tool for checking degree progress.",DegreeMap (or equivalent: Degree Map or : NOT_ADDRESSED,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""DegreeMap (or equivalent: Degree Map or degree audit) is the tool for checking degree progress"",
+      ""result"": ""NOT_ADDRESSED"",
+      ""reason"": ""The AI response does not mention DegreeMap or any equivalent tool for checking degree progress.""
+    }
+  ],
+  ""pass_criteria_result"": ""FAIL"",
+  ""pass_criteria_reason"": ""The response does not name DegreeMap, degree audit, or degree map as the tool for checking degree progress."",
+  ""overall"": ""FAIL""
+}",4069
+QA-03,system,How do I contact my advisor?,any_student,FALSE,PASS,PASS,The response names both contact methods: email and calendar.,Mail tab and Calendar are the two contac: PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""Mail tab and Calendar are the two contact methods"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response mentions both email and calendar functions as methods to contact the advisor.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response names both contact methods: email and calendar."",
+  ""overall"": ""PASS""
+}",3769
+QA-04,system,How do I see my program requirements?,any_student,TRUE,SKIPPED,,Deferred — not judged,,,0
+QA-05,profile,Do I have outstanding tasks on my academic profile?,any_student,FALSE,FAIL,FAIL,The response does not identify or mention the registration hold.,All sandbox students have a registration: FAIL,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""All sandbox students have a registration hold"",
+      ""result"": ""FAIL"",
+      ""reason"": ""The AI response states there are no immediate outstanding tasks, contradicting the existence of a registration hold.""
+    }
+  ],
+  ""pass_criteria_result"": ""FAIL"",
+  ""pass_criteria_reason"": ""The response does not identify or mention the registration hold."",
+  ""overall"": ""FAIL""
+}",3497
+QA-06,course_rec,What courses should I take next semester?,student_a,TRUE,SKIPPED,,Deferred — not judged,,,0
+QA-07,course_rec,What courses should I take next semester?,student_b,TRUE,SKIPPED,,Deferred — not judged,,,0
+QA-08,course_rec,What courses should I take next semester?,student_c,TRUE,SKIPPED,,Deferred — not judged,,,0
+QA-09,system,My DegreeMap doesn't look right. How do I see if there's an issue?,any_student,FALSE,PASS,PASS,The response explicitly directs the student to contact their academic advisor for concerns about the DegreeMap.,Advisor is the escalation path for Degre: PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""Advisor is the escalation path for DegreeMap discrepancies"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response suggests contacting the academic advisor, James Young, for a thorough review if discrepancies are noticed.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response explicitly directs the student to contact their academic advisor for concerns about the DegreeMap."",
+  ""overall"": ""PASS""
+}",6159
+QA-10,process,How do you approach course registration and planning?,any_student,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-02,course_rec,I'm thinking about dropping Calc 2 this semester. How does that affect my Spring,student_c,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-03,prerequisite,What are the prerequisites for University Physics 1 (PHYS 1021)?,any_student,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-04,prerequisite,What are the prerequisites for Multivariate Calculus (MATH 2233)?,any_student,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-05,prerequisite,What are the prerequisites for Linear Algebra I (MATH 2184)?,any_student,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-06,prerequisite,Can I take Linear Algebra and Multivariate Calculus at the same time?,any_student,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-08,policy,What's the minimum number of credits I need as an international student?,student_c,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-09,course_rec,How many credits does the MAE curriculum recommend per semester?,student_a,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-10,profile,What math courses do I still need to take?,student_c,FALSE,FAIL,FAIL,"The response incorrectly lists MATH 1231 as a course still needed, violating the pass criteria.",Student C has completed MATH 1231 per pr: FAIL,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""Student C has completed MATH 1231 per profile"",
+      ""result"": ""FAIL"",
+      ""reason"": ""The AI response incorrectly lists MATH 1231 as a course still needed, contradicting the student's profile which shows it as completed.""
+    }
+  ],
+  ""pass_criteria_result"": ""FAIL"",
+  ""pass_criteria_reason"": ""The response incorrectly lists MATH 1231 as a course still needed, violating the pass criteria."",
+  ""overall"": ""FAIL""
+}",3918
+CTX-13,degree_info,How many total credits do I need to graduate with a BS in Mechanical Engineering,any_student,FALSE,PASS,PASS,The response clearly states that 128 credits are required for the degree.,BSME requires 128 total credits: PASS,"Here's my evaluation of the AI advisor's response:
+
+{
+  ""assertions"": [
+    {
+      ""assertion"": ""BSME requires 128 total credits"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response explicitly states that 128 credits are needed for the BSME degree.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response clearly states that 128 credits are required for the degree."",
+  ""overall"": ""PASS""
+}",4258
+CTX-14,degree_info,How many non-technical elective credits do I need for my ME degree?,any_student,FALSE,PASS,PASS,The response clearly states that 18 credits of non-technical electives are required.,ME degree requires 18 credits of non-tec: PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""ME degree requires 18 credits of non-technical electives"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response explicitly states that 18 credits of Non-Technical Electives are required for the Mechanical Engineering degree.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response clearly states that 18 credits of non-technical electives are required."",
+  ""overall"": ""PASS""
+}",4495
+CTX-15,degree_info,How many technical elective credits do I need?,any_student,FALSE,PASS,PASS,The response explicitly states that 12 credits of technical electives are required.,ME degree requires 12 credits of technic: PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""ME degree requires 12 credits of technical electives"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response correctly states that 12 credits of Technical Electives are required for the Bachelor of Science in Mechanical Engineering degree.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response explicitly states that 12 credits of technical electives are required."",
+  ""overall"": ""PASS""
+}",3628
+CTX-16,profile,Who is my academic advisor?,any_student,FALSE,PASS,PASS,The response explicitly names James Young as the academic advisor.,All sandbox students are assigned adviso: PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""All sandbox students are assigned advisor James Young"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response correctly states that the student's advisor is James Young.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response explicitly names James Young as the academic advisor."",
+  ""overall"": ""PASS""
+}",3278
+CTX-17,prerequisite,How many credits is University Physics I (PHYS 1021)?,any_student,FALSE,PASS,PASS,The response explicitly states that PHYS 1021 is 4 credits.,PHYS 1021 is a 4-credit course: PASS,"Here's the evaluation in the requested JSON format:
+
+{
+  ""assertions"": [
+    {
+      ""assertion"": ""PHYS 1021 is a 4-credit course"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response correctly states that University Physics I (PHYS 1021) is a 4-credit course.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response explicitly states that PHYS 1021 is 4 credits."",
+  ""overall"": ""PASS""
+}",3820
+CTX-18,prerequisite,What are the prerequisites for Analytical Mechanics I (APSC 2057)?,any_student,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-19,profile,What courses am I currently enrolled in?,student_a,FALSE,PASS,PASS,The response correctly identifies both current courses: MATH 1232 and ECON 1011.,Student A is currently taking MATH 1232 : PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""Student A is currently taking MATH 1232 and ECON 1011"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response correctly identifies MATH 1232 and ECON 1011 as current courses.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response correctly identifies both current courses: MATH 1232 and ECON 1011."",
+  ""overall"": ""PASS""
+}",3594
+CTX-20,profile,What courses am I currently taking this semester?,student_b,FALSE,PASS,PASS,The response identifies both current courses (MATH 1232 and PSYC 1001) accurately.,Student B is currently taking MATH 1232 : PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""Student B is currently taking MATH 1232 and PSYC 1001"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI response correctly identifies MATH 1232 and PSYC 1001 as current courses.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response identifies both current courses (MATH 1232 and PSYC 1001) accurately."",
+  ""overall"": ""FAIL""
+}",4404
+CTX-21,prerequisite,Am I eligible to take PHYS 1021 next semester?,student_c,TRUE,SKIPPED,,Deferred — not judged,,,0
+CTX-22,prerequisite,Am I eligible to take Multivariate Calculus (MATH 2233) next semester?,student_a,TRUE,SKIPPED,,Deferred — not judged,,,0
+FALLBACK-01,out_of_scope,What's the best pizza place near campus?,any_student,FALSE,PASS,PASS,The response appropriately redirects the non-academic question without attempting to answer it.,Non-academic questions should be redirec: PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""Non-academic questions should be redirected"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI advisor politely redirects the non-academic question about pizza places to academic-related topics.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response appropriately redirects the non-academic question without attempting to answer it."",
+  ""overall"": ""PASS""
+}",4029
+FALLBACK-02,out_of_scope,Can you write me an essay for my English class?,any_student,FALSE,PASS,PASS,"The response declines the request to write an essay and redirects the student to appropriate resources such as the University Writing Center, professor's office hours, and study groups.",Non-academic-advising requests should be: PASS,"{
+  ""assertions"": [
+    {
+      ""assertion"": ""Non-academic-advising requests should be declined/redirected"",
+      ""result"": ""PASS"",
+      ""reason"": ""The AI advisor clearly declines to write the essay and redirects the student to appropriate resources for help.""
+    }
+  ],
+  ""pass_criteria_result"": ""PASS"",
+  ""pass_criteria_reason"": ""The response declines the request to write an essay and redirects the student to appropriate resources such as the University Writing Center, professor's office hours, and study groups."",
+  ""overall"": ""PASS""
+}",4777

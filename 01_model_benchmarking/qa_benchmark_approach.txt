@@ -1,0 +1,129 @@
+
+AI ADVISOR QA BENCHMARK - EVALUATION APPROACH
+==============================================
+
+OVERVIEW
+--------
+This benchmark evaluates the AI advisor (Bedrock agent) by programmatically
+running a 30-question test set and scoring responses through three independent
+evaluation layers. The test set spans seven categories: prerequisite knowledge,
+course recommendations, degree information, student profile queries, system
+navigation, policy questions, and out-of-scope requests.
+
+Each question is paired with a student context (one of three synthetic student
+profiles), a ground truth answer, required keywords (must_contain), prohibited
+keywords (must_not_contain), factual assertions, and human-authored pass criteria.
+
+PIPELINE
+--------
+1. run_benchmark.py  - Calls Bedrock agent for each question with production-
+                       identical student context. New session per question.
+                       Output: benchmark_results_<timestamp>.csv
+
+2. qa_benchmark_eval.py - Deterministic evaluation (deferral detection, rule-
+                          based fact-checking, keyword checks).
+                          Output: eval_results_<timestamp>.csv
+
+3. run_judge.py      - LLM-as-judge via separate Bedrock agent. Evaluates
+                       non-deferred responses against per-question factual
+                       assertions and pass criteria.
+                       Output: judge_results_<timestamp>.csv
+
+EVALUATION LAYERS
+-----------------
+
+Layer 1: Deferral Detection (pattern-based)
+  Identifies responses where the agent declines to answer — asking clarifying
+  questions, stating it lacks information, or redirecting the student. Deferrals
+  are separated from substantive responses before scoring, since "didn't answer"
+  and "answered incorrectly" are different failure modes with different governance
+  implications.
+
+Layer 2: Deterministic Evaluation (rule-based + keyword)
+  Applied to non-deferred responses:
+  - Factual accuracy: regex checks for course codes, credit counts, student-
+    specific data (e.g., correct total credits, appropriate courses for student)
+  - must_contain: case-insensitive substring match against required terms.
+    Supports OR alternatives via pipe syntax (e.g., "DegreeMap|degree audit")
+  - must_not_contain: verification that prohibited terms don't appear
+    (e.g., recommending a course the student already completed)
+  - Hallucination detection: fabricated course codes, incorrect credit totals,
+    facts contradicting the student profile
+
+Layer 3: LLM-as-Judge (Bedrock agent)
+  A separate Bedrock agent evaluates each non-deferred response against the
+  question's factual assertions and pass criteria. For each assertion, the judge
+  returns PASS, FAIL, or NOT_ADDRESSED with a one-sentence rationale. Evaluates
+  semantic correctness — whether the response communicated the right information
+  regardless of wording.
+
+WHY THREE LAYERS
+----------------
+These layers intentionally measure different things:
+  - Rule-based factual accuracy: "Did it say anything wrong?"
+  - Deterministic keyword check: "Did it include the key information?"
+  - LLM judge: "Did it actually answer the question correctly?"
+
+Applied to the same responses, they produce different pass rates (100%, ~75%,
+~72% respectively in pilot runs), demonstrating that no single metric captures
+the full picture of system performance.
+
+METRICS
+-------
+  - Deferral rate: % of questions where the agent declined to answer
+  - Factual accuracy (when answered): % with no incorrect statements
+  - Hallucination count: fabricated facts per response
+  - must_contain pass (when answered): % including all required key terms
+  - must_not_contain pass: % with no prohibited terms
+  - Completeness: Full / Partial / Deflected
+  - LLM judge pass (when answered): % passing all assertions + pass criteria
+  - Overall pass: all deterministic checks pass simultaneously
+
+PILOT RESULTS (2 runs, 30 questions each)
+------------------------------------------
+  Deferral rate:            43-50% (concentrated in prerequisites + course recs)
+  Factual accuracy:         100% when answered
+  Hallucinations:           0 across all responses
+  must_contain (answered):  71-80%
+  LLM judge (answered):     71-73%
+  Overall pass:             40-43%
+
+Key finding: The system is simultaneously "perfectly accurate" and "failing half
+the time" depending on how you measure. The risk is not misinformation — it is
+under-performance through excessive caution, invisible in standard accuracy
+metrics.
+
+FILES
+-----
+  eval/run_benchmark.py         - Bedrock agent runner
+  eval/qa_benchmark_eval.py     - Deterministic evaluation script
+  eval/run_judge.py             - LLM-as-judge runner
+  eval/student_profiles.py      - Shared student context data
+  eval/ai_advisor_test_set 3.csv - Test set (30 questions)
+
+USAGE
+-----
+  # Run benchmark (requires AWS creds)
+  python eval/run_benchmark.py
+  python eval/run_benchmark.py --dry-run
+
+  # Evaluate results
+  python eval/qa_benchmark_eval.py --input eval/benchmark_results_<timestamp>.csv
+
+  # Run LLM judge
+  python eval/run_judge.py --input eval/benchmark_results_<timestamp>.csv
+  python eval/run_judge.py --input eval/benchmark_results_<timestamp>.csv --dry-run
+
+DESIGN DECISIONS
+----------------
+  - No ROUGE/METEOR/BLEU: text overlap metrics penalize semantically equivalent
+    answers (e.g., "Calc II" vs "MATH 1232") and don't add value for factual Q&A.
+  - Binary PASS/FAIL (not ordinal 1-5): simpler to interpret and aggregate.
+    Ordinal scoring could be added later for tracking incremental improvement.
+  - No logprob confidence scores: kept simpler for now. Could be added to the
+    judge layer for identifying uncertain ratings.
+  - Per-question assertions rather than generic rubrics: allows distinguishing
+    deferrals from wrong answers and catches domain-specific errors.
+  - New session per question: isolates responses to avoid cross-question context
+    leaking. Trade-off: doesn't capture multi-turn conversation behavior seen
+    in production (where follow-ups to deferrals often yield answers).

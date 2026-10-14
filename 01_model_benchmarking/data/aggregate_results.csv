@@ -1,0 +1,31 @@
+question_id,category,question,runs,factual_pass_rate,mc_pass_rate,mnc_pass_rate,overall_pass_rate
+CTX-02,course_rec,I'm thinking about dropping Calc 2 this semester. How does that affect my Spring,2,1.00,0.00,1.00,0.00
+CTX-03,prerequisite,What are the prerequisites for University Physics 1 (PHYS 1021)?,2,1.00,0.00,1.00,0.00
+CTX-04,prerequisite,What are the prerequisites for Multivariate Calculus (MATH 2233)?,2,1.00,0.00,1.00,0.00
+CTX-05,prerequisite,What are the prerequisites for Linear Algebra I (MATH 2184)?,2,1.00,0.00,1.00,0.00
+CTX-06,prerequisite,Can I take Linear Algebra and Multivariate Calculus at the same time?,2,1.00,0.50,1.00,0.50
+CTX-08,policy,What's the minimum number of credits I need as an international student?,2,1.00,0.00,1.00,0.00
+CTX-09,course_rec,How many credits does the MAE curriculum recommend per semester?,2,1.00,0.00,1.00,0.00
+CTX-10,profile,What math courses do I still need to take?,2,1.00,0.50,1.00,0.50
+CTX-13,degree_info,How many total credits do I need to graduate with a BS in Mechanical Engineering,2,1.00,1.00,1.00,1.00
+CTX-14,degree_info,How many non-technical elective credits do I need for my ME degree?,2,1.00,1.00,1.00,1.00
+CTX-15,degree_info,How many technical elective credits do I need?,2,1.00,1.00,1.00,1.00
+CTX-16,profile,Who is my academic advisor?,2,1.00,1.00,1.00,1.00
+CTX-17,prerequisite,How many credits is University Physics I (PHYS 1021)?,2,1.00,1.00,1.00,1.00
+CTX-18,prerequisite,What are the prerequisites for Analytical Mechanics I (APSC 2057)?,2,1.00,0.00,1.00,0.00
+CTX-19,profile,What courses am I currently enrolled in?,2,1.00,1.00,1.00,1.00
+CTX-20,profile,What courses am I currently taking this semester?,2,1.00,1.00,1.00,1.00
+CTX-21,prerequisite,Am I eligible to take PHYS 1021 next semester?,2,1.00,0.00,1.00,0.00
+CTX-22,prerequisite,Am I eligible to take Multivariate Calculus (MATH 2233) next semester?,2,1.00,0.00,1.00,0.00
+FALLBACK-01,out_of_scope,What's the best pizza place near campus?,2,1.00,1.00,1.00,1.00
+FALLBACK-02,out_of_scope,Can you write me an essay for my English class?,2,1.00,1.00,1.00,1.00
+QA-01,policy,How do I drop a course after the semester starts?,2,1.00,0.00,1.00,0.00
+QA-02,system,How do I check my degree progress?,2,1.00,0.00,1.00,0.00
+QA-03,system,How do I contact my advisor?,2,1.00,1.00,1.00,1.00
+QA-04,system,How do I see my program requirements?,2,1.00,0.00,1.00,0.00
+QA-05,profile,Do I have outstanding tasks on my academic profile?,2,1.00,0.00,1.00,0.00
+QA-06,course_rec,What courses should I take next semester?,2,1.00,0.00,1.00,0.00
+QA-07,course_rec,What courses should I take next semester?,2,1.00,0.00,1.00,0.00
+QA-08,course_rec,What courses should I take next semester?,2,1.00,0.50,1.00,0.50
+QA-09,system,My DegreeMap doesn't look right. How do I see if there's an issue?,2,1.00,1.00,1.00,1.00
+QA-10,process,How do you approach course registration and planning?,2,1.00,0.00,1.00,0.00

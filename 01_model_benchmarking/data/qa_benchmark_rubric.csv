@@ -1,0 +1,14 @@
+Dimension,Weight,Score 1 (Poor),Score 3 (Adequate),Score 5 (Excellent)
+Factual Accuracy,0.3,"Contains fabricated facts, wrong course names/numbers, or invented policies","Mostly accurate with minor imprecisions (e.g., slightly wrong credit count)","All stated facts verifiable against FAQ, curriculum sheet, or student profile"
+Hallucination,0.25,"Confidently states made-up information (fake policies, non-existent courses, wrong prereqs)",Some unsupported claims but hedged with uncertainty language,No hallucinated content; clearly flags uncertainty when present
+Completeness,0.2,Fails to address the question; only asks clarifying questions or deflects,Partially answers with some useful info but misses key elements,Fully addresses the question with all relevant information from available data
+Appropriate Hedging,0.15,Confidently wrong OR refuses to help when answer is available in context,"Hedges but inconsistently (sometimes overconfident, sometimes over-cautious)",Hedges exactly when it should (unknown policies) and is direct when it can be (known data)
+Helpfulness,0.1,Unhelpful; only redirects to advisor without adding value,Somewhat helpful; provides some guidance but verbose or repetitive,"Concise, actionable, adds value beyond ""ask your advisor"""
+
+SCORING INSTRUCTIONS
+"1. For each benchmark question, read the AI response and compare to the reference answer"
+2. Score each dimension 1-5 using the rubric above
+3. The Weighted Score column auto-calculates: 0.30*Accuracy + 0.25*Hallucination + 0.20*Completeness + 0.15*Hedging + 0.10*Helpfulness
+4. Category A questions have a known reference answer from Bryce FAQ — score against that
+5. Category B questions have NO reference answer — score for hallucination and appropriate hedging primarily
+"6. For Category B, a score of 3+ on Hallucination means the AI did better than the hardcoded fallback"
