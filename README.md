@@ -10,21 +10,13 @@ This repository brings together evaluation data for all three levels tested.
 
 ## Evaluation levels
 
-| Level | Materials |
-| --- | --- |
-| **Model-level benchmarking** | Model-level evaluation data and correctness scores. |
-| **Model field testing** | 78 observed interactions from field testing, anonymized as described below. |
-| **System-level outcomes** | Final task submissions and system-level correctness assessments. |
+| Level | Folder | Materials |
+| --- | --- | --- |
+| **Model-level benchmarking** | `01_model_benchmarking/` | Model-level evaluation data and correctness scores. |
+| **Model field testing** | `02_model_field_testing/` | 78 observed interactions from field testing, anonymized as described below. |
+| **System-level outcomes** | `03_system_outcomes/` | Final task submissions and system-level correctness assessments. |
 
 ## Organization
-
-The repository structure follows the three evaluation levels presented in the paper:
-
-| Folder | Contents |
-| --- | --- |
-| `01_model_benchmarking/` | Model-level benchmarking code and data, organized into `code/` and `data/` subfolders. |
-| `02_model_field_testing/` | 78 anonymized field-testing interactions. |
-| `03_system_outcomes/` | Final submissions and outcome assessments. |
 
 ### `01_model_benchmarking/`
 
