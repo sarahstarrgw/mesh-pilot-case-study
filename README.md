@@ -6,7 +6,7 @@ Supporting materials for **“The MESH Environment: Multi-level Evaluation of So
 
 MESH provides a reference architecture for a multilevel evaluation environment for sociotechnical human–AI workflows. The paper uses a February technical pilot as a case study to demonstrate how the definition of the **system under test** affects which failures and behaviors are observable.
 
-This repository brings together evaluation data from three levels, along with model-level evaluation code.
+This repository brings together evaluation data for all three levels tested.
 
 ## Evaluation levels
 
