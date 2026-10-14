@@ -5,8 +5,7 @@ AI ADVISOR QA BENCHMARK - EVALUATION APPROACH
 OVERVIEW
 --------
 This benchmark evaluates the AI advisor (Bedrock agent) by programmatically
-running a 30-question test set and scoring responses through three independent
-evaluation layers. The test set spans seven categories: prerequisite knowledge,
+running a 30-question curated benchmarking test set and scoring responses through three independent evaluation layers. The test set spans seven categories: prerequisite knowledge,
 course recommendations, degree information, student profile queries, system
 navigation, policy questions, and out-of-scope requests.
 
@@ -64,9 +63,7 @@ These layers intentionally measure different things:
   - Deterministic keyword check: "Did it include the key information?"
   - LLM judge: "Did it actually answer the question correctly?"
 
-Applied to the same responses, they produce different pass rates (100%, ~75%,
-~72% respectively in pilot runs), demonstrating that no single metric captures
-the full picture of system performance.
+Applied to the same responses, they produce different pass rates, demonstrating that no single metric captures the full picture of system performance.
 
 METRICS
 -------
@@ -79,26 +76,14 @@ METRICS
   - LLM judge pass (when answered): % passing all assertions + pass criteria
   - Overall pass: all deterministic checks pass simultaneously
 
-PILOT RESULTS (2 runs, 30 questions each)
-------------------------------------------
-  Deferral rate:            43-50% (concentrated in prerequisites + course recs)
-  Factual accuracy:         100% when answered
-  Hallucinations:           0 across all responses
-  must_contain (answered):  71-80%
-  LLM judge (answered):     71-73%
-  Overall pass:             40-43%
 
-Key finding: The system is simultaneously "perfectly accurate" and "failing half
-the time" depending on how you measure. The risk is not misinformation — it is
-under-performance through excessive caution, invisible in standard accuracy
-metrics.
 
 FILES
 -----
   eval/run_benchmark.py         - Bedrock agent runner
   eval/qa_benchmark_eval.py     - Deterministic evaluation script
   eval/run_judge.py             - LLM-as-judge runner
-  eval/student_profiles.py      - Shared student context data
+  eval/student_profiles.py      - Shared synthetic student context data
   eval/ai_advisor_test_set 3.csv - Test set (30 questions)
 
 USAGE
